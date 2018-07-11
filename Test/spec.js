@@ -64,15 +64,14 @@ customerRecord.push(new Customer(26, 'Saquan'));
 
 console.log(salesRecord);
 console.log(customerRecord);
-comp(salesRecord, customerRecord);
+const CustomSalesRecord = comp(salesRecord, customerRecord);
 
 describe('Compile function', () => {
     it('Comp is a function that returns an array', () => {
         expect(comp).to.be.a('function');
     });
     it('Array lists sales, with CustomerID replaced with customer name', () => {
-        expect(comp(salesRecord, customerRecord)).to.equal(`[ { orderID: 1, name: 'Saquan', total: 9.99 }, { orderID: 2, name: 'Saquan', total: 19.99 }, { orderID: 3, name: 'Odell', total: 29.99 }, { orderID: 4, name: 'Eli', total: 59.99 }, { orderID: 5, name: 'Odell', total: 99.99 } ]`);
+        expect(CustomSalesRecord).to.eql([ { orderID: 1, name: 'Saquan', total: 9.99 }, { orderID: 2, name: 'Saquan', total: 19.99 }, { orderID: 3, name: 'Odell', total: 29.99 }, { orderID: 4, name: 'Eli', total: 59.99 }, { orderID: 5, name: 'Odell', total: 99.99 } ]);
     });
     //It prints an array
 });
-
